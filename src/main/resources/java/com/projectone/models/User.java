@@ -1,8 +1,5 @@
-package java.models
+package projectone.models;
 
-public class User {
-
-}
 public class User {
 	private String username;
 	private String firstname;
@@ -16,7 +13,6 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public User(String username, String firstname, int id) {
 		super();
