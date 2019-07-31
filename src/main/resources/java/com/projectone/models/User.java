@@ -1,4 +1,4 @@
-package projectone.models;
+package com.projectone.models;
 
 public class User {
 	private String username;
