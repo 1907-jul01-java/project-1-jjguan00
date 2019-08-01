@@ -1,47 +1,39 @@
 package com.projectone.models;
 
 public class User {
-	private String username;
-	private String firstname;
-	private int id;
-
-	
-    public int getId() {
-		return id;
+	private String email;
+	private String name;
+	private String password;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public User(String username, String firstname, int id) {
-		super();
-		this.username = username;
-		this.firstname = firstname;
-		this.id = id;
+	public String getName() {
+		return name;
 	}
-
-	public String getUsername() {
-		return username;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	public void setUsername(String username) {
-		this.username = username;
+	public String getPassword() {
+		return password;
 	}
-
-	public String getFirstname() {
-		return firstname;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", firstname=" + firstname + ", id=" + id + "]";
+		return "User [email=" + email + ", name=" + name + ", password=" + password + "]";
+	}
+	public User() {}
+	
+	public User(String email, String name, String password) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.password = password;
 	}
 
-
-
+	
 }
