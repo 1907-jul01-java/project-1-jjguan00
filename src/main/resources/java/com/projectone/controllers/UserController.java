@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.FormParam;
 import com.projectone.models.User;
 
 @Path("user")
@@ -27,14 +28,16 @@ public class UserController {
 	@GET
 	@Path("{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void getMovieById(@PathParam("id") String id) {
-		System.out.print(id);
+	public int getMovieById(@PathParam("id") int id) {
+		return id;
 	}
 
 	@POST
 	@Path("signup")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void createUser(User user) {
-		System.out.print(user);
-	}
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String createUser(@FormParam("username") String username, 
+            @FormParam("password") String password) {
+		return "here";
+	}		
 }
