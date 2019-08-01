@@ -6,8 +6,8 @@ drop table if exists admins;
 
 create table users (
   id serial primary key,
-  username text not null unique,
-  firstname text not null,
+  email text not null unique,
+  name text not null,
   password text not null
 );
 create table admins(

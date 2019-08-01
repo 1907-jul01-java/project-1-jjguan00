@@ -7,7 +7,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import com.projectone.models.User;
-
+import com.projectone.entities.UserDao;
+import com.projectone.util.*;
 
 @Path("user")
 public class UserController {
@@ -16,9 +17,10 @@ public class UserController {
 	@Path("signup")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String createUser(User user) {
-		System.out.print(user);
-		return "here";
+	public void	 createUser(User user) {
+		ConnectionUtil cu = new ConnectionUtil();
+		UserDao start = new UserDao(cu.getConnection());
+		start.createUser(user);
 	}		
 
 	@GET 
