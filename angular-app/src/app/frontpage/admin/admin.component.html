@@ -1,0 +1,9 @@
+<ul *ngFor = "let request of requests">
+    <li>{{request.username}}</li>
+    <li>{{request.context}}</li>
+    <li>${{request.money}}</li>
+    <li>{{request.status}}</li>
+    <li *ngIf="request.status == 'pending'"  (click)="deny(this.request.id)" class="btn btn-warning">Deny</li>
+    <li *ngIf="request.status == 'pending'" (click)="approve(this.request.id)" class="btn btn-success">Approve</li>
+    <li *ngIf="request.status == 'pending'" (click)="destroy(this.request.id)" class="btn btn-danger">Delete</li>
+</ul>

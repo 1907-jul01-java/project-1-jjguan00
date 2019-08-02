@@ -1,10 +1,17 @@
 <div class="container">
-	<h1>Employee Reimbursement System</h1>
-	<ul>
-		<li><a [routerLink]="['requests']"> Your Request</a></li>
-		<li id="borderLi"><a [routerLink]="['submit',{data:this.user.name | json}]">Submit A Reimbursement</a> </li>
-		<li><button (click)="logOut()">Sign Out</button></li>
-	</ul>
+    <h1>Employee Reimbursement System</h1>
+    <div *ngIf="this.user.name != 'admin'">
+        <ul>
+            <li><a [routerLink]="['requests']"> Your Request</a></li>
+            <li id="borderLi"><a [routerLink]="['submit',{data:this.user.name | json}]">Submit A Reimbursement</a> </li>
+            <li><button (click)="logOut()">Sign Out</button></li>
+        </ul>
+    </div>
+    <div *ngIf="this.user.name == 'admin'">
+        <a [routerLink]="['admin']">Show All Requests</a> 
+        <button (click)="logOut()">Sign Out</button>
+    </div>
+
 </div>
 <div class="container">
     <h2>Welcome {{this.user.name}}</h2>

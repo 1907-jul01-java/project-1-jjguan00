@@ -19,7 +19,7 @@ public class UserDao {
 		} catch (SQLException e) {
 			e.getMessage();
 		} finally {
-			System.out.println("Thank you for signing up for bank. You can log in now.");
+			System.out.println("Thank you for signing up for reimbursement");
 		}
 	}
 	

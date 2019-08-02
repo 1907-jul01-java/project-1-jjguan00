@@ -12,6 +12,7 @@ import { UserService } from './user.service';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { SubmitComponent } from './frontpage/submit/submit.component';
 import { RequestsComponent } from './frontpage/requests/requests.component';
+import { AdminComponent } from './frontpage/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RequestsComponent } from './frontpage/requests/requests.component';
     SignupComponent,
     FrontpageComponent,
     SubmitComponent,
-    RequestsComponent
+    RequestsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

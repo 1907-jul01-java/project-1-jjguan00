@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ReimbursementService } from './../../reimbursement.service';
 
 @Component({
@@ -9,16 +9,21 @@ import { ReimbursementService } from './../../reimbursement.service';
 })
 export class SubmitComponent implements OnInit {
   submiterequest: any = {};
-  user: string = this.activateroute.snapshot.params.username;
+  user = '';
 
-  constructor(private reimbursementservice: ReimbursementService, private router: Router, private activateroute: ActivatedRoute) {}
+  constructor(private reimbursementservice: ReimbursementService, private router: Router, private activateroute: ActivatedRoute) {
+      this.user = this.activateroute.snapshot.params.username;
+  }
 
   ngOnInit() {
         console.log('here');
-        console.log(this.activateroute.snapshot.params.username);
+        this.user = this.activateroute.snapshot.params.username;
+        console.log(this.activateroute.snapshot.params.data);
   }
 
   request() {
+      this.submiterequest.username = this.activateroute.snapshot.params.data;
+      this.submiterequest.status = 'pending' ;
+      return this.reimbursementservice.request(this.submiterequest).subscribe(() => {() => this.router.navigateByUrl('/'); });
       }
-
 }
