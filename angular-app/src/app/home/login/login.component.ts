@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     login() {
         return this.userservice.login(this.logInUser).subscribe(result => {
             console.log(result)
-            this.router.navigate(["/frontpage"]);
+            this.router.navigate(["/frontpage"], {queryParams: result});
         })
     }
 }

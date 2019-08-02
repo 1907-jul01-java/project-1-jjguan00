@@ -23,7 +23,7 @@ public class UserDao {
 		}
 	}
 	
-	public void login(LogInUser user) {
+	public User login(LogInUser user) {
     	try {
     		PreparedStatement pStatement = connection.prepareStatement("select * from users where email = ? and password = ?");
     		pStatement.setString(1,user.getEmail());
@@ -34,13 +34,14 @@ public class UserDao {
 			   String name = rs.getString("name");
 			   String password = rs.getString("password");
 			   User loggeduser = new User(email,name,password);
-			   System.out.println(loggeduser);
+			   return loggeduser;
 		   } else {
 		        System.out.print("Wrong UserName and Password");
 		   }
     	}catch(SQLException e) {
     		e.getMessage();
     	}
+		return null;
     }
 
 }

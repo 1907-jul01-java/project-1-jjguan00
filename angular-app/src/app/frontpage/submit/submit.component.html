@@ -1,1 +1,11 @@
-<p>submit works!</p>
+	<form (submit)="request()">
+		<div class="form-row">
+			<div class="form-group col-sm-2" id="price">
+				<input  type="number" name= "meh" [(ngModel)] = "submiterequest.money" placeholder="amount" class="form-control">
+			</div>
+		</div>
+		<div class="form-group col-md-8" id="desc">
+			<textarea name= "random" [(ngModel)] = "submiterequest.context" placeholder="description" class="form-control" rows="5" cols="10"></textarea>
+		</div>
+		<input type="submit" class="btn btn-success" value="Post" id="post_button">
+    </form>

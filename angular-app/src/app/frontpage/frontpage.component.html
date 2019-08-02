@@ -1,1 +1,12 @@
-<p>frontpage works!</p>
+<div class="container">
+	<h1>Employee Reimbursement System</h1>
+	<ul>
+		<li><a [routerLink]="['requests']"> Your Request</a></li>
+		<li id="borderLi"><a [routerLink]="['submit',{data:this.user.name | json}]">Submit A Reimbursement</a> </li>
+		<li><button (click)="logOut()">Sign Out</button></li>
+	</ul>
+</div>
+<div class="container">
+    <h2>Welcome {{this.user.name}}</h2>
+	<router-outlet></router-outlet>
+</div>
