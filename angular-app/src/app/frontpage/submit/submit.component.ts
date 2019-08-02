@@ -16,14 +16,12 @@ export class SubmitComponent implements OnInit {
   }
 
   ngOnInit() {
-        console.log('here');
         this.user = this.activateroute.snapshot.params.username;
-        console.log(this.activateroute.snapshot.params.data);
   }
 
   request() {
       this.submiterequest.username = this.activateroute.snapshot.params.data;
       this.submiterequest.status = 'pending' ;
-      return this.reimbursementservice.request(this.submiterequest).subscribe(() => {() => this.router.navigateByUrl('/'); });
+      return this.reimbursementservice.request(this.submiterequest).subscribe(() => this.router.navigate(['/frontpage']));  
       }
 }

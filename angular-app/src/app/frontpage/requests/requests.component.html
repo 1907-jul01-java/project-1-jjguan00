@@ -1,6 +1,6 @@
-<ul *ngFor = "let request of requests">
-    <li>Requestee:  {{request.username}}</li>
-    <li>Description:  {{request.context}}</li>
-    <li>Amount:  ${{request.money}}</li>
-    <li>Status:  {{request.status}}</li>
+<ul *ngFor = "let request of requests" class="list-group">
+    <li class="list-group-item">Requestee:  {{request.username}}</li>
+    <li class="list-group-item">Description:  {{request.context}}</li>
+    <li class="list-group-item">Amount:  ${{request.money}}</li>
+    <li class="list-group-item">Status:  {{request.status}}</li>
 </ul>

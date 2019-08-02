@@ -25,15 +25,15 @@ export class AdminComponent implements OnInit {
     }
 
     deny(number) {
-        return this.reimbursementservice.deny(number).subscribe(()=>{this.router.navigate(['/'])})
+        return this.reimbursementservice.deny(number).subscribe(() => this.router.navigate(['/frontpage']))
     }
 
     approve(number) {
-        return this.reimbursementservice.approve(number).subscribe()
+        return this.reimbursementservice.approve(number).subscribe(() => this.router.navigate(['/frontpage']))
     }
 
     destroy(number) {
-        return this.reimbursementservice.destroy(number).subscribe()
+        return this.reimbursementservice.destroy(number).subscribe(() => this.router.navigate(['/frontpage']))
     }
 
 }

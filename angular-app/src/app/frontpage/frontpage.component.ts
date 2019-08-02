@@ -15,7 +15,6 @@ export class FrontpageComponent implements OnInit {
         private activatedrouter: ActivatedRoute) { this.user = this.activatedrouter.snapshot.queryParams }
 
     ngOnInit() {
-        console.log(this.user);
     }
 
     checkLogIn() {
@@ -26,7 +25,6 @@ export class FrontpageComponent implements OnInit {
 
     logOut(): boolean {
         this.user = {};
-        console.log("here");
         this.router.navigate(['/']);
         return true;
     }
