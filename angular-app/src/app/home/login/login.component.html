@@ -1,15 +1,20 @@
-<!-- <div class="container">
-    Login
-    <form (submit)="logInn()">
-        <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter email" name="testvalue" [(ngModel)]=logInUser.email>
-            <small id="emailHelp" class="form-text text-muted">Never share your email</small>
-        </div>
-        <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                    name="testvalue" [(ngModel)]=logInUser.password>
-        </div>
-        <input type="submit" class="btn btn-primary" value="Sign In">
-    </form>
-</div> -->
+<div class="container">
+			<div class="panel-heading">
+				<h3 class="panel-title">Log In</h3>
+			</div>
+	<form (submit)="login()" role="form">
+		<div class="form-group">
+			<fieldset>
+				<div class="form-group">
+					<input class="form-control" placeholder="email" name="testvalue" [(ngModel)]="logInUser.email"
+						type="text">
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="Password" name="testvalue" [(ngModel)]="logInUser.password"
+						type="password">
+				</div>
+				<input type="submit" class="btn btn-sm btn-success" value="LogIn">
+			</fieldset>
+		</div>
+	</form>
+</div>

@@ -7,6 +7,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import com.projectone.models.User;
+import com.projectone.models.LogInUser;
 import com.projectone.entities.UserDao;
 import com.projectone.util.*;
 
@@ -21,6 +22,17 @@ public class UserController {
 		ConnectionUtil cu = new ConnectionUtil();
 		UserDao start = new UserDao(cu.getConnection());
 		start.createUser(user);
+	}
+	
+	@POST
+	@Path("login")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public void	 login(LogInUser userx) {
+		System.out.print(userx);
+		ConnectionUtil cu = new ConnectionUtil();
+		UserDao start = new UserDao(cu.getConnection());
+		start.login(userx);
 	}		
 
 	@GET 

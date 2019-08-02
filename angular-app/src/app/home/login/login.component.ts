@@ -8,14 +8,17 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-      logInUser = {}
+    logInUser: any = {};
     constructor(private userservice: UserService,
         private router: Router) { }
 
     ngOnInit() {
     }
-    
-    logIn(){
-  }
 
+    login() {
+        return this.userservice.login(this.logInUser).subscribe(result => {
+            console.log(result)
+            this.router.navigate(["/frontpage"]);
+        })
+    }
 }

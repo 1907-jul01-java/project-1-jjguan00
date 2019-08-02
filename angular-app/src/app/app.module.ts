@@ -11,7 +11,7 @@ import { SignupComponent } from './home/signup/signup.component';
 import { UserService } from './user.service';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { SubmitComponent } from './frontpage/submit/submit.component';
-import { StatusComponent } from './frontpage/status/status.component';
+import { RequestsComponent } from './frontpage/requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { StatusComponent } from './frontpage/status/status.component';
     SignupComponent,
     FrontpageComponent,
     SubmitComponent,
-    StatusComponent
+    RequestsComponent
   ],
   imports: [
     BrowserModule,
