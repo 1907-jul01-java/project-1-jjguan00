@@ -67,5 +67,14 @@ public class ReimbursementController {
 		start.destroy(id);
 		cu.close();
 	}
+	
+	@GET
+	@Path("getbyuser/{username}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Reimbursement> getbyuser(@PathParam("username") String username) {
+		ConnectionUtil cu = new ConnectionUtil();
+		ReimbursementDao start = new ReimbursementDao(cu.getConnection());
+		return start.getbyuser(username);
+	}
 
 }

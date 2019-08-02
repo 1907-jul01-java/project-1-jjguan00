@@ -21,7 +21,8 @@ public class ReimbursementDao {
 			pStatement.setString(2, reimbursement.getContext());
 			pStatement.setInt(3, reimbursement.getMoney());
 			pStatement.setString(4, reimbursement.getStatus());
-			pStatement.setString(5, reimbursement.getUsername());
+			pStatement.setString(5, reimbursement.getUsername().replaceAll("^\"|\"$", ""));
+			System.out.println(pStatement);
 			pStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.getMessage();
@@ -85,6 +86,29 @@ public class ReimbursementDao {
         	e.getMessage();
         }    	
         System.out.println("You deleted a reimbursement request");
+    }
+    
+    public List<Reimbursement> getbyuser(String user) {
+        List<Reimbursement> reimbursements = new ArrayList<Reimbursement>();
+        Reimbursement reimbursement;
+        try {
+        	PreparedStatement statement = connection.prepareStatement("select * from reimbursements where username = ?");
+        	statement.setString(1, user.replaceAll("^\"|\"$", ""));
+        	System.out.println(statement);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+            	int id = resultSet.getInt("id");
+            	String context = resultSet.getString("context");
+            	int money = resultSet.getInt("money");
+            	String status = resultSet.getString("status");
+            	String username = resultSet.getString("username");
+                reimbursement = new Reimbursement(id, context,money, status, username);
+                reimbursements.add(reimbursement);
+            }
+        } catch (SQLException e) {
+        	e.getMessage();
+        }
+        return reimbursements;
     }
 
 }

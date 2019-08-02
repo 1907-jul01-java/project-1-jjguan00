@@ -6,7 +6,7 @@ import { SignupComponent } from './home/signup/signup.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { SubmitComponent } from './frontpage/submit/submit.component';
 import { RequestsComponent } from './frontpage/requests/requests.component';
-import { AdminComponent } from './frontpage/admin/admin.component'
+import { AdminComponent } from './frontpage/admin/admin.component';
 
 const routes: Routes = [{
     path: '', component: HomeComponent,

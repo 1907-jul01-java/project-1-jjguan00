@@ -31,4 +31,9 @@ export class ReimbursementService {
       console.log(id);
     return this.http.get(`/project-1-jjguan00/api/reimbursement/destroy/${id}`);
   }
+
+  getbyuser(username: string){
+        console.log(username);
+        return this.http.get(`/project-1-jjguan00/api/reimbursement/getbyuser/${username}`);
+  }
 }

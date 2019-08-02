@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ReimbursementService } from './../../reimbursement.service';
 
 @Component({
   selector: 'app-requests',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./requests.component.css']
 })
 export class RequestsComponent implements OnInit {
+    requests: any = {};
+    user = '';
+  constructor(private reimbursementservice: ReimbursementService, private router: Router, private activatedroute: ActivatedRoute) {
 
-  constructor() { }
+    }
 
   ngOnInit() {
+      this.user = this.activatedroute.snapshot.params.data;
+      console.log( this.user);
+      this.getbyuser();
   }
+
+      getbyuser() {
+        return this.reimbursementservice.getbyuser(this.user).subscribe(data => {
+            this.requests = data
+            console.log(data)
+        })
+    }
 
 }

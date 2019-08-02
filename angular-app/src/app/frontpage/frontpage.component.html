@@ -2,8 +2,8 @@
     <h1>Employee Reimbursement System</h1>
     <div *ngIf="this.user.name != 'admin'">
         <ul>
-            <li><a [routerLink]="['requests']"> Your Request</a></li>
-            <li id="borderLi"><a [routerLink]="['submit',{data:this.user.name | json}]">Submit A Reimbursement</a> </li>
+            <li><a [routerLink]="['requests',{data:this.user.name | json}]">My Reimbursement Status</a> </li><br>
+            <li><a [routerLink]="['submit',{data:this.user.name | json}]">Submit A Reimbursement</a> </li>
             <li><button (click)="logOut()">Sign Out</button></li>
         </ul>
     </div>

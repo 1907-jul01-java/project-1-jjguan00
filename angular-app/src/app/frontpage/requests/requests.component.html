@@ -1,1 +1,6 @@
-<p>requests works!</p>
+<ul *ngFor = "let request of requests">
+    <li>Requestee:  {{request.username}}</li>
+    <li>Description:  {{request.context}}</li>
+    <li>Amount:  ${{request.money}}</li>
+    <li>Status:  {{request.status}}</li>
+</ul>
